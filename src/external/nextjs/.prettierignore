@@ -1,0 +1,6 @@
+node_modules
+src/external/nextjs/node_modules
+src/external/nextjs/build
+src/external/nextjs/.next
+.env.local
+

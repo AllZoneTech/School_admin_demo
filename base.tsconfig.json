@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "lib": ["ES2020"],
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@schema/*": ["schema/*"],
+      "@models/*": ["models/*"],
+      "@utilities/*": ["utilities/*"],
+      "@utils/*": ["external/nextjs/src/utils/*"],
+      "@helpers/*": ["helpers/*"],
+      "@useCases/*": ["application/usecases/*"],
+      "@interfaces/*": ["application/interfaces/*"],
+      "@adapters/*": ["adapters/*"],
+      "@dependencies": ["external/nextjs/dependencies/index.ts"],
+      "@components/*": ["external/nextjs/src/components/*"],
+      "@hooks/*": ["external/nextjs/src/hooks/*"],
+      "@constants/*": ["external/nextjs/src/constants/*"]
+    },
+    "types": ["reflect-metadata", "node"],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
+
