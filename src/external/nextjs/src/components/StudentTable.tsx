@@ -193,7 +193,6 @@ function StudentTable(): React.ReactElement {
         studentData={studentData}
         state={state}
         studyGroups={studyGroups}
-        isStudentLoading={isStudentLoading}
       />
       <Modal
         aria-labelledby="transition-modal-title"
@@ -316,6 +315,7 @@ function StudentTable(): React.ReactElement {
                       style={{
                         width: '100px',
                       }}
+                      disabled={isAddStudentLoading}
                     >
                       {isAddStudentLoading || isAddStudentStudyGroupsLoading ? (
                         <CircularProgress

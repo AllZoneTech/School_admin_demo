@@ -26,7 +26,7 @@ import clsx from 'clsx';
 import { Field, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-
+import { useGetStudents } from '@hooks/useGetStudents';
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -252,12 +252,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DataTable({
-  studentData,
-  state,
-  studyGroups,
-  isStudentLoading,
-}) {
+export default function DataTable({ studentData, state, studyGroups }) {
   const [rows, setRows] = React.useState([]);
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -272,6 +267,8 @@ export default function DataTable({
   const [isRowSelected, setIsRowSelected] = React.useState(false);
   const [studyGroupValues, setStudyGroupValues] = React.useState([]);
   const [dateOfBirthValue, setDateOfBirth] = React.useState();
+
+  const { isFetching: isStudentLoading } = useGetStudents();
 
   const transformedArray = studentData?.map((student) => {
     const date =
